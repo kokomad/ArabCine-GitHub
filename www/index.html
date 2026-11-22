@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#1A1A2E">
+<title>السينما موبايل</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="offline" class="offline" hidden>لا يوجد اتصال بالإنترنت</div>
+
+<header class="top">
+  <svg class="brand" viewBox="0 0 108 108" aria-hidden="true">
+    <rect x="23" y="25" width="62" height="58" rx="7" fill="#FFD700"/>
+    <path d="M35,35 L73,35 M35,73 L73,73" stroke="#fff" stroke-width="2.5"/>
+    <path d="M45,40 L65,54 L45,68 Z" fill="#E94560"/>
+  </svg>
+  <label class="search">
+    <span id="ic-search"></span>
+    <input id="q" type="search" placeholder="ابحث عن قناة أو فيلم..." autocomplete="off" enterkeyhint="search">
+    <button id="q-clear" class="q-clear" hidden aria-label="مسح"></button>
+  </label>
+</header>
+
+<main id="view" class="view"></main>
+
+<nav class="nav" id="nav"></nav>
+
+<!-- المشغّل -->
+<section id="player" class="player" hidden>
+  <video id="vid" playsinline webkit-playsinline preload="auto"></video>
+  <div id="pspin" class="p-spin" hidden></div>
+  <div id="ptap" class="p-tap"><span id="ptap-l"></span><span id="ptap-r"></span></div>
+  <div id="perr" class="p-err" hidden>
+    <p id="perr-t"></p>
+    <div class="p-err-b">
+      <button class="btn pri" data-pa="retry">إعادة المحاولة</button>
+      <button class="btn sec" data-pa="ext">فتح في مشغّل خارجي</button>
+      <button class="btn sec" data-pa="copy">نسخ الرابط</button>
+    </div>
+  </div>
+  <div id="pui" class="p-ui show">
+    <div class="p-top">
+      <button class="ib" data-pa="back" id="pb-back" aria-label="رجوع"></button>
+      <div class="p-ttl"><b id="p-name"></b><small id="p-sub"></small></div>
+      <button class="ib txt" data-pa="quality" id="pb-q" hidden>HD</button>
+      <button class="ib" data-pa="ext" id="pb-ext" aria-label="مشغّل خارجي"></button>
+    </div>
+    <div class="p-mid">
+      <button class="ib sm" data-pa="prev" id="pb-prev" aria-label="السابق"></button>
+      <button class="ib sm txt" data-pa="rew" id="pb-rew">-10</button>
+      <button class="ib big" data-pa="play" id="pb-play" aria-label="تشغيل"></button>
+      <button class="ib sm txt" data-pa="ff" id="pb-ff">+10</button>
+      <button class="ib sm" data-pa="next" id="pb-next" aria-label="التالي"></button>
+    </div>
+    <div class="p-bot">
+      <div class="p-seek">
+        <span id="p-cur">00:00</span>
+        <input id="p-range" type="range" min="0" max="1000" value="0" step="1">
+        <span id="p-dur">00:00</span>
+        <span id="p-livechip" class="live-chip"><i></i>مباشر</span>
+      </div>
+      <div class="p-btns">
+        <button class="ib" data-pa="mute" id="pb-mute" aria-label="الصوت"></button>
+        <button class="ib txt" data-pa="speed" id="pb-speed">1x</button>
+        <button class="ib" data-pa="fit" id="pb-fit" aria-label="حجم الصورة"></button>
+        <button class="ib" data-pa="pip" id="pb-pip" aria-label="صورة داخل صورة"></button>
+        <button class="ib" data-pa="copy" id="pb-copy" aria-label="نسخ الرابط"></button>
+        <button class="ib" data-pa="full" id="pb-full" aria-label="ملء الشاشة"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="sheet" class="sheet">
+  <div class="sheet-bd" data-act="closesheet"></div>
+  <div class="sheet-box" id="sheet-box"></div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="channels.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

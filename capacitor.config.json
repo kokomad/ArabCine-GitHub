@@ -1,0 +1,19 @@
+{
+  "appId": "com.arabcine.app",
+  "appName": "السينما موبايل",
+  "webDir": "www",
+  "backgroundColor": "#1A1A2E",
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#1A1A2E"
+  },
+  "plugins": {
+    "CapacitorHttp": {
+      "enabled": true
+    }
+  }
+}

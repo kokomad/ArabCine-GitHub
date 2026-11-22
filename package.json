@@ -1,0 +1,19 @@
+{
+  "name": "arabcine",
+  "version": "1.0.0",
+  "description": "ArabCine - تطبيق السينما موبايل: بث مباشر وأفلام ومسلسلات",
+  "private": true,
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "hls.js": "1.5.17",
+    "@capacitor/app": "^6.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5"
+  }
+}
